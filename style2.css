@@ -1,0 +1,43 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.hexagon {
+  overflow: hidden;
+  /* background-color: rgb(133, 255, 245); */
+
+  width: 20em;
+  height: 17.32em;
+  transform: rotate(-30deg) skewX(30deg);
+  border-radius: 0.5em;
+}
+
+.hexagon *,
+.hexagon *:before {
+  /* must use the display: block in this part so that the final corners will round */
+  display: block;
+  overflow: hidden;
+  width: inherit;
+  height: inherit;
+  border-radius: inherit;
+}
+
+.inner {
+  /* background-color: lightslategray; */
+  transform: skewX(-30deg) rotate(60deg) skewX(30deg);
+}
+
+.hexagon:first-child .inner:before {
+  content: "";
+  transform: skewX(-30deg) rotate(60deg) skewX(30deg);
+  background-color: #615dfa;
+}

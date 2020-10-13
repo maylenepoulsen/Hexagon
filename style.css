@@ -1,0 +1,68 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/* Hexagon 1 */
+
+.hexagon {
+  /* background-color: #f8468d; */
+
+  /* heigth should be double the width */
+  width: 348px;
+  height: 696px;
+
+  transform: rotate(120deg);
+
+  overflow: hidden;
+}
+
+.inner {
+  /* background-color: #000; */
+
+  width: 348px;
+  height: 696px;
+  transform: rotate(-60deg);
+
+  overflow: hidden;
+}
+
+.inner:before {
+  background-color: #615dfa;
+
+  width: 348px;
+  height: 696px;
+
+  content: "";
+  display: block;
+  transform: rotate(-60deg);
+
+  overflow: hidden;
+}
+
+/* Hexagon 2 */
+
+.hexagon-svg {
+  width: 350px;
+  height: 400px;
+  background-color: #23d2e2;
+
+  clip-path: url(#hexagon-path);
+}
+
+.svg-defs {
+  width: 0;
+  height: 0;
+}
+
+#hexagon-path {
+  /* make sure the parent container (in this case .hexagon-svg is large enough for scaling the svg) */
+  transform: scale(2);
+}
